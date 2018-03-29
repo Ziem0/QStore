@@ -11,7 +11,7 @@ public class Wallet {
     private Integer currentBalance;
     private Integer totalPoints;
     private List<Quest> achievements;
-    private List<Artifact> boughtItems;
+    private List<Workshop> boughtItems;
 
     public Wallet() {
         this.id = IdCreator.createId();
@@ -21,7 +21,7 @@ public class Wallet {
         this.boughtItems = new LinkedList<>();
     }
 
-    public Wallet(String id, Integer currentBalance, Integer totalPoints, List<Quest> achievements, List<Artifact> boughtItems) {
+    public Wallet(String id, Integer currentBalance, Integer totalPoints, List<Quest> achievements, List<Workshop> boughtItems) {
         this.id = id;
         this.currentBalance = currentBalance;
         this.totalPoints = totalPoints;
@@ -45,7 +45,7 @@ public class Wallet {
         return achievements;
     }
 
-    public List<Artifact> getBoughtItems() {
+    public List<Workshop> getBoughtItems() {
         return boughtItems;
     }
 
