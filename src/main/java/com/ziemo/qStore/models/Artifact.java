@@ -1,40 +1,54 @@
 package main.java.com.ziemo.qStore.models;
 
 import main.java.com.ziemo.qStore.helper.IdCreator;
+import main.java.com.ziemo.qStore.interfaces.ClassCreator;
 
 import java.time.LocalDate;
 
 public class Artifact extends AbstractItem {
 
-    private ArtifactCategory artifactCategory;
+    private ArtifactCategory category;
+
+
 
     public Artifact(Integer value, String name, String description, ArtifactCategory artifactCategory) {
         super(value, name, description);
-        this.artifactCategory = artifactCategory;
+        this.category = artifactCategory;
     }
 
     public Artifact(String id, Integer value, String name, String description, ArtifactCategory artifactCategory) {
         super(id, value, name, description);
-        this.artifactCategory = artifactCategory;
+        this.category = artifactCategory;
+    }
+
+    public ArtifactCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(ArtifactCategory category) {
+        this.category = category;
     }
 
 
+    //zrobic get do create category
+
+
     private class ArtifactCategory {
-        private final String id;
+        private final String idCat;
         private final String name;
 
         public ArtifactCategory(String name) {
-            this.id = IdCreator.createId();
+            this.idCat = IdCreator.createId();
             this.name = name;
         }
 
         public ArtifactCategory(String id, String name) {
-            this.id = id;
+            this.idCat = id;
             this.name = name;
         }
 
-        public String getId() {
-            return id;
+        public String getIdCat() {
+            return idCat;
         }
 
         public String getName() {
@@ -58,8 +72,8 @@ public class Artifact extends AbstractItem {
             this.date = LocalDate.now();
         }
 
-        public ArtifactCategoryFeatured(String id, String name, Student owner, LocalDate date) {
-            super(id, name);
+        public ArtifactCategoryFeatured(String idCat, String name, Student owner, LocalDate date) {
+            super(idCat, name);
             this.owner = owner;
             this.date = date;
         }
@@ -69,8 +83,6 @@ public class Artifact extends AbstractItem {
             return String.format("name: %s\ndate of use: %s", this.getName(), this.date.toString());
         }
     }
-
-
 
 }
 
