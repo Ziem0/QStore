@@ -1,5 +1,5 @@
-/ignore/
-/nieignore/
+/off/
 *.txt
-!asd.txt
+!on.txt
+
 
