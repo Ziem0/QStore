@@ -1,4 +1,5 @@
 /ignore/
-src/*.txt
+/nieignore/
+*.txt
 !asd.txt
 
